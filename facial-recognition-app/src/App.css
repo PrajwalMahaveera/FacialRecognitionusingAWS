@@ -1,12 +1,88 @@
-.App{
-    margin-top: 2rem;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #3498db;
+    color: #fff;
     text-align: center;
-}
-.success{
-    padding: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  input[type='file'] {
+    margin-bottom: 0.5rem;
+  }
+  
+  .submitButton {
+    padding: 0.5rem 5rem; /* Adjust the padding to extend the button width */
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #2980b9;
+  }
+  
+  .success {
     color: green;
-}
-.failure{
-    padding: 1rem;
+  }
+  
+  .failure {
     color: red;
-}
+  }
+
+
+  
+  .visitorImage {
+    max-width: 250px;
+    height: auto;
+    margin-top: 1rem;
+  }
+  
+  footer {
+    background-color: #34495e;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .headerNote {
+    background-color: #f2f2f2;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 0px; /* Adjust the margin to control the space between the header and the note */
+  }
+  
+  .headerNote p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    margin: 0; /* Reset margin to remove default spacing */
+  }
