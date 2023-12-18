@@ -39,7 +39,7 @@ def buildResponse(statusCode,body=None):
         'statusCode':statusCode,
         'headers':{
             'Content-Type':'application/json',
-            'Access-Conrol-Allow-Orgin':'*,'
+            'Access-Conrol-Allow-Orgin':'*'
         }
     }
     if body is not None:

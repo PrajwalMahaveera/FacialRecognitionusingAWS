@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 const uuid=require('uuid');
 
@@ -6,21 +7,26 @@ function App() {
   const [image,setImage]=useState('');
   const [uploadResultMessage,setUploadResultMessage]=useState('Please upload an image to authenticate.');
   const [visitorName,setVisitorName]=useState('placeholder.png');
-  const [visitorImagePath, setVisitorImagePath] = useState('');
+  const [visitorImagePath, setVisitorImagePath] = useState('./visitors/placeholder.png');
   const [isAuth,setAuth]=useState(false);
+  useEffect(() => {
+    setVisitorImagePath('./visitors/placeholder.png');
+  }, []);
 
   function sendImage(e){
     e.preventDefault();
     setVisitorName(image.name);
     const visitorImageName=uuid.v4();
-    setVisitorImagePath(`./visitors/${visitorName}`);
+    //setVisitorImagePath(`./visitors/${visitorName}`);
+    setVisitorImagePath(URL.createObjectURL(image));
     //rest of the method needs to be added
     fetch(`https://mux7t53t2a.execute-api.us-west-1.amazonaws.com/dev/project1-visitor-image-store/${visitorImageName}.jpeg`,{
        method:'PUT',
        headers:{
         'Content-Type':'image/jpeg'
        },
-       body:image
+       body:image,
+       mode: 'cors'
     }).then(async()=>{
       const response=await authenticate(visitorImageName);
       if(response.Message ==='Success'){
@@ -54,6 +60,7 @@ function App() {
   }
 
   return (
+    
     <div className="App">
       <h2>Facial Recognition System</h2>
       <form onSubmit={sendImage}>
@@ -61,8 +68,9 @@ function App() {
         <button type='submit'>Authenticate</button>
       </form>
       <div className={isAuth?'success':'failure'}>{uploadResultMessage}</div>
-      <img src={ require(`./visitors/${visitorName}`)} alt="Visitor" height={250} width={250} />
-      <img src={visitorImagePath} alt="Visitor" height={250} width={250} />
+      <img src={ require(`./visitors/${visitorName}`)} alt="Visitor" height={250} width={250} /> 
+      <img src={visitorImagePath} alt="Visitor" height={300} width={300} />
+
     </div>
   );
 }
