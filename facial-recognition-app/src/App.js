@@ -79,7 +79,7 @@ function App() {
         <h1>Facial Recognition System</h1>
       </header>
       <div className="headerNote">
-    <p>Some pre-uploaded employee images include Satya Nadella, Mark Zuckerberg, Sundar Pichai, Larry Page, Jack Dorsey, Mukesh Ambani, and Shahrukh Khan.</p>
+    <p>Some pre-uploaded employee images include Satya Nadella, Mark Zuckerberg, Sundar Pichai, Larry Page, Jack Dorsey, and Mukesh Ambani.</p>
   </div>
   
       <div className="container">
