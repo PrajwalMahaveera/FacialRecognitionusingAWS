@@ -6,7 +6,7 @@ const uuid = require('uuid');
 function App() {
   const [image, setImage] = useState('');
   const [uploadResultMessage, setUploadResultMessage] = useState('Please upload an image to authenticate.');
-  const [visitorName, setVisitorName] = useState('placeholder.png');
+  //const [visitorName, setVisitorName] = useState('placeholder.png');
   const [visitorImagePath, setVisitorImagePath] = useState(placeholderImage);
   const [isAuth, setAuth] = useState(false);
 
@@ -20,7 +20,7 @@ function App() {
     // const visitorImageName = uuid.v4();
     // setVisitorImagePath(URL.createObjectURL(image));
     e.preventDefault();
-  setVisitorName(image.name);
+  //setVisitorName(image.name);
   const visitorImageName = uuid.v4();
   const newVisitorImagePath = URL.createObjectURL(image); // Create new object URL
 
