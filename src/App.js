@@ -79,7 +79,7 @@ function App() {
         <h1>Facial Recognition System</h1>
       </header>
       <div className="headerNote">
-    <p>Some pre-uploaded employee images include Satya Nadella, Mark Zuckerberg, Sundar Pichai, Larry Page, Jack Dorsey, and Mukesh Ambani.</p>
+    <p>Some pre-uploaded employee images include Satya Nadella, Mark Zuckerberg, Sundar Pichai, Larry Page, and Jack Dorsey.</p>
   </div>
   
       <div className="container">
@@ -96,7 +96,7 @@ function App() {
       </div>
   
       <footer>
-        <p>&copy; 2023 Created by Prajwal Mahaveera</p>
+        <p>&copy; 2023 Created for fun</p>
       </footer>
     </div>
   );
